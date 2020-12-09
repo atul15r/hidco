@@ -63,7 +63,7 @@ export default function Main() {
 					defaultCenter={center}
 					defaultZoom={14}
 				>
-					<CustomComponent lat={22.5989978} lng={88.457473}>
+					<CustomComponent lat={22.595943} lng={88.486535}>
 						<img
 							src="https://www.flaticon.com/svg/static/icons/svg/818/818268.svg"
 							className="w-10 h-10"

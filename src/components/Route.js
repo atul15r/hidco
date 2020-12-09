@@ -56,7 +56,7 @@ export default function Route({ devid, id, color, lowBg }) {
 
 		setInterval(() => {
 			apiCall();
-		}, 30000);
+		}, 10000);
 	}, [devid]);
 
 	const [expanded, setExpanded] = React.useState(false);
@@ -67,19 +67,33 @@ export default function Route({ devid, id, color, lowBg }) {
 		setTimeout(() => {
 			setExpanded(false);
 			setLoading(false);
-		}, 3000);
+		}, 10000);
 	};
 
 	const handleCancel = () => {
 		setExpanded(false);
 	};
 	console.log(
-		Moment(state?.updatedAt).format("lll"),
-		Moment(state?.createdAt).format("lll"),
-		"here iiiiiiiiii",
-
-		Moment(state?.createdAt).startOf("hour").from(Moment(state.updatedAt)) // 14 minutes ago
+		Moment(state?.updatedAt).format(),
+		Moment(state?.createdAt).format(),
+		Moment(state.createdAt).startOf("hour").fromNow()
 	);
+
+	function getTimeDiff(createdAt) {
+		var now = Moment(new Date()); //todays date
+		var end = Moment(createdAt); // another date
+		var duration = Moment.duration(now.diff(end));
+		var mins = duration.asMinutes();
+
+		console.log(Moment().format("MMMM Do YYYY, h:mm:ss a"));
+
+		return mins;
+	}
+
+	let createdAt = "2020-12-09T14:40:43.000Z";
+	let mins = getTimeDiff(createdAt);
+	console.log("mins:", mins);
+
 	return (
 		<>
 			<div className="justify-center items-center flex md:block">
@@ -88,11 +102,10 @@ export default function Route({ devid, id, color, lowBg }) {
 					style={{ fontSize: 10 }}
 				>
 					Updated{" "}
-					{/* {Moment(state?.createdAt)
-						.startOf("hour")
-						.from(Moment(state.updatedAt))
-						.replace("in", "")}{" "} */}
-					{Moment(state.updatedAt).startOf("hour").fromNow()}
+					{String(330 - Math.abs(getTimeDiff(state.createdAt))).substring(0, 4)}
+					{330 - Math.abs(getTimeDiff(state.createdAt)) < 1
+						? " sec ago"
+						: " min ago"}
 				</div>
 				<div
 					className="rounded-lg flex justify-center items-center p-1 mb-2 md:mb-4 cursor-pointer"
@@ -100,20 +113,16 @@ export default function Route({ devid, id, color, lowBg }) {
 					onClick={toggleDrawer("bottom", true)}
 				>
 					<div
-						className="h-full p-2 md:p-4 -mt-2 -ml-2 rounded-l-lg font-bold"
+						className="h-full p-2 md:p-4 -mt-2 -ml-2 rounded-l-lg font-bold w-24 text-xs whitespace-nowrap"
 						style={{ background: color }}
 					>
-						Route {id}
+						{id === 2 ? "Coffee House" : `Route ${id}`}
 					</div>
 					<div
-						className="h-full p-2 md:p-4 -mt-2 flex justify-center items-center rounded-r-lg"
+						className="h-full p-1 md:p-3 -mt-2 flex justify-center items-center rounded-r-lg"
 						style={{ background: color }}
 					>
-						<DirectionsBusIcon
-							size={30}
-							color="#fff"
-							className="text-white text-9xl"
-						/>
+						<DirectionsBusIcon color="#fff" className="text-white text-xs" />
 						<ExpandMoreIcon style={{ color: lowBg }} />
 					</div>
 				</div>
