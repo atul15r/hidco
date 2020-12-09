@@ -96,13 +96,18 @@ export default function Route({ devid, id, color, lowBg }) {
 				>
 					Updated{" "}
 					{330 - Math.abs(getTimeDiff(state.createdAt)) < 1
-						? String(330 - Math.abs(getTimeDiff(state.createdAt))).substring(
-								0,
-								4
-						  )
+						? Math.floor(330 - Math.abs(getTimeDiff(state.createdAt))) < 1
+							? null
+							: Math.floor(330 - Math.abs(getTimeDiff(state.createdAt)))
+						: Math.floor(330 - Math.abs(getTimeDiff(state.createdAt))) > 60
+						? Math.floor(330 - Math.abs(getTimeDiff(state.createdAt))) / 60
 						: Math.floor(330 - Math.abs(getTimeDiff(state.createdAt)))}
 					{330 - Math.abs(getTimeDiff(state.createdAt)) < 1
-						? " sec ago"
+						? Math.floor(330 - Math.abs(getTimeDiff(state.createdAt))) < 1
+							? "few sec ago"
+							: " sec ago"
+						: Math.floor(330 - Math.abs(getTimeDiff(state.createdAt))) > 60
+						? " hr ago"
 						: " min ago"}
 				</div>
 				<div
