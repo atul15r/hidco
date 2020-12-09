@@ -84,15 +84,8 @@ export default function Route({ devid, id, color, lowBg }) {
 		var end = Moment(createdAt); // another date
 		var duration = Moment.duration(now.diff(end));
 		var mins = duration.asMinutes();
-
-		console.log(Moment().format("MMMM Do YYYY, h:mm:ss a"));
-
 		return mins;
 	}
-
-	let createdAt = "2020-12-09T14:40:43.000Z";
-	let mins = getTimeDiff(createdAt);
-	console.log("mins:", mins);
 
 	return (
 		<>
@@ -102,7 +95,12 @@ export default function Route({ devid, id, color, lowBg }) {
 					style={{ fontSize: 10 }}
 				>
 					Updated{" "}
-					{String(330 - Math.abs(getTimeDiff(state.createdAt))).substring(0, 4)}
+					{330 - Math.abs(getTimeDiff(state.createdAt)) < 1
+						? String(330 - Math.abs(getTimeDiff(state.createdAt))).substring(
+								0,
+								4
+						  )
+						: Math.floor(330 - Math.abs(getTimeDiff(state.createdAt)))}
 					{330 - Math.abs(getTimeDiff(state.createdAt)) < 1
 						? " sec ago"
 						: " min ago"}
