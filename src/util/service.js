@@ -29,37 +29,37 @@ export const Routes1Column = [
 	},
 	{
 		title: "departure stoppage",
-		dataIndex: "departure stoppage",
+		dataIndex: "departure_stoppage1",
 		key: "departure stoppage",
 	},
 	{
 		title: "departure time",
-		dataIndex: "departure time",
+		dataIndex: "departure_time1",
 		key: "departure time",
 	},
 	{
 		title: "arrival stoppage",
-		dataIndex: "arrival stoppage",
+		dataIndex: "arrival_stoppage1",
 		key: "arrival stoppage",
 	},
 	{
 		title: "arrival time",
-		dataIndex: "arrival time",
+		dataIndex: "arrival_time1",
 		key: "arrival time",
 	},
 	{
 		title: "departure time",
-		dataIndex: "departure time",
+		dataIndex: "departure_time2",
 		key: "departure time",
 	},
 	{
 		title: "arrival stoppage",
-		dataIndex: "arrival stoppage",
+		dataIndex: "arrival_stoppage2",
 		key: "arrival stoppage",
 	},
 	{
 		title: "arrival time",
-		dataIndex: "arrival time",
+		dataIndex: "arrival_time2",
 		key: "arrival time",
 	},
 ];
@@ -117,6 +117,119 @@ export const Routes1Table = [
 	},
 ];
 
+export const Routes2Column = [
+	{
+		title: "trips",
+		dataIndex: "trips",
+		key: "trips",
+	},
+	{
+		title: "departure stoppage",
+		dataIndex: "departure_stoppage1",
+		key: "departure stoppage",
+	},
+	{
+		title: "departure time",
+		dataIndex: "departure_time1",
+		key: "departure time",
+	},
+
+	{
+		title: "arrival stoppage",
+		dataIndex: "arrival_stoppage2",
+		key: "arrival stoppage",
+	},
+	{
+		title: "arrival time",
+		dataIndex: "arrival_time2",
+		key: "arrival time",
+	},
+];
+
+export const Routes2Table = [
+	{
+		trips: "1",
+		departure_stoppage1: "pride plaza",
+		departure_time1: "8:00AM",
+		arrival_stoppage2: "newtown bus stand",
+		arrival_time2: "09:20AM",
+	},
+	{
+		trips: "2",
+		departure_stoppage1: "newtown bus stand",
+		departure_time1: "9:20 AM",
+		arrival_stoppage2: "newtown bus stand",
+		arrival_time2: "10:40 AM",
+	},
+	{
+		trips: "3",
+		departure_stoppage1: "newtown bus stand",
+		departure_time1: "10:40 AM",
+		arrival_stoppage2: "pride plaza",
+		arrival_time2: "12:00 PM",
+	},
+	{
+		trips: "4",
+		departure_stoppage1: "pride plaza",
+		departure_time1: "5:00 PM",
+		arrival_stoppage2: "newtown bus stand",
+		arrival_time2: "6:20 PM",
+	},
+	{
+		trips: "5",
+		departure_stoppage1: "newtown bus stand",
+		departure_time1: "6:20 PM",
+		arrival_stoppage2: "pride plaza",
+		arrival_time2: "7:40 PM",
+	},
+];
+export const Routes4Column = [
+	{
+		title: "trips",
+		dataIndex: "trips",
+		key: "trips",
+	},
+	{
+		title: "departure stoppage",
+		dataIndex: "departure_stoppage1",
+		key: "departure stoppage",
+	},
+	{
+		title: "departure time",
+		dataIndex: "departure_time1",
+		key: "departure time",
+	},
+	{
+		title: "arrival stoppage",
+		dataIndex: "arrival_stoppage1",
+		key: "arrival stoppage",
+	},
+	{
+		title: "arrival time",
+		dataIndex: "arrival_time1",
+		key: "arrival time",
+	},
+	{
+		title: "departure time",
+		dataIndex: "departure_time2",
+		key: "departure time",
+	},
+	{
+		title: "half time",
+		dataIndex: "half_time",
+		key: "half time",
+	},
+	{
+		title: "arrival stoppage",
+		dataIndex: "arrival_stoppage2",
+		key: "arrival stoppage",
+	},
+	{
+		title: "arrival time",
+		dataIndex: "arrival_time2",
+		key: "arrival time",
+	},
+];
 export const Routes4Table = [
 	{
 		trips: "1",

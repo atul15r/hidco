@@ -53,11 +53,11 @@ export default function Main() {
 		lng: 88.461685,
 	};
 	return (
-		<div className="w-full h-screen fixed p-3 md:p-0">
+		<div className="w-full h-screen fixed">
 			<div className="p-1 shadow-2xl absolute top-3 left-3 bg-white z-10">
 				<img src={Logo} className="w-40 h-14" />
 			</div>
-			<div className="w-full h-3/4 md:h-screen rounded-2xl md:rounded-none overflow-hidden">
+			<div className="w-full h-5/6 md:h-screen">
 				<GoogleMapReact
 					bootstrapURLKeys={{ key: "AIzaSyBJ-RKwTIsTWX_4eKsBN0bBUBBx8dP1-Ls" }}
 					defaultCenter={center}
@@ -94,7 +94,7 @@ export default function Main() {
 						: null}
 				</GoogleMapReact>
 			</div>
-			<div className="p-4 absolute bottom-2 right-2 h-1/4 md:h-auto">
+			<div className="p-4 absolute bottom-0 md:bottom-2 md:right-2 h-1/6 md:h-auto w-full md:w-auto flex md:block justify-center items-center overflow-x-scroll overflow-y-hidden">
 				{Routes.map(data => (
 					<Route
 						devid={data.devid}
