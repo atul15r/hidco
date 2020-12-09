@@ -84,7 +84,7 @@ export default function Route({ devid, id, color, lowBg }) {
 		<>
 			<div className="justify-center items-center flex md:block">
 				<div
-					className="h-full -ml-2 text-xs font-medium p-2 m-2 text-gray-200 rounded-full md:rounded-lg bg-gray-500"
+					className="h-full -ml-2 text-xs font-medium p-2 m-2 text-gray-500 md:text-gray-200 rounded-lg md:rounded-lg bg-gray-200 md:bg-gray-500 -mt-2 md:mt-0"
 					style={{ fontSize: 10 }}
 				>
 					Updated{" "}
@@ -95,8 +95,9 @@ export default function Route({ devid, id, color, lowBg }) {
 					{Moment(state.updatedAt).startOf("hour").fromNow()}
 				</div>
 				<div
-					className="rounded-lg flex justify-center items-center p-1 mb-2 md:mb-4"
+					className="rounded-lg flex justify-center items-center p-1 mb-2 md:mb-4 cursor-pointer"
 					style={{ background: lowBg }}
+					onClick={toggleDrawer("bottom", true)}
 				>
 					<div
 						className="h-full p-2 md:p-4 -mt-2 -ml-2 rounded-l-lg font-bold"
@@ -113,10 +114,7 @@ export default function Route({ devid, id, color, lowBg }) {
 							color="#fff"
 							className="text-white text-9xl"
 						/>
-						<ExpandMoreIcon
-							style={{ color: lowBg }}
-							onClick={toggleDrawer("bottom", true)}
-						/>
+						<ExpandMoreIcon style={{ color: lowBg }} />
 					</div>
 				</div>
 			</div>
