@@ -86,7 +86,7 @@ export default function Route({ devid, id, color, lowBg }) {
 		<>
 			<div
 				className={`justify-center items-center m-3 md:m-0 ${
-					id === 1 ? "pl-8" : "pl-0"
+					id === 1 ? "pl-24" : "pl-0"
 				} md:pl-0`}
 			>
 				<div
