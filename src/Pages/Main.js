@@ -76,8 +76,14 @@ export default function Main() {
 						</p>
 					</CustomComponent>
 					<CustomComponent
-						lat={routes[0].latitude ? routes[0].latitude : 22.5825665}
-						lng={routes[0].longitude ? routes[0].longitude : 88.4619895}
+						lat={
+							routes[0].latitude !== undefined ? routes[0].latitude : 22.5825665
+						}
+						lng={
+							routes[0].longitude !== undefined
+								? routes[0].longitude
+								: 88.4619895
+						}
 					>
 						<div
 							className="rounded-full font-medium absolute p-2 mt-8 bg-blue-600 text-white text-xs z-0 text-center"
