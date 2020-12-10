@@ -4,6 +4,7 @@ import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
 import { store } from "../redux/store";
 import Moment from "moment";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
 import {
 	Routes4Table,
 	Routes1Table,
@@ -84,14 +85,10 @@ export default function Route({ devid, id, color, lowBg }) {
 
 	return (
 		<>
-			<div
-				className={`justify-center items-center m-3 md:m-0 ${
-					id === 1 ? "pl-24" : "pl-0"
-				} md:pl-0`}
-			>
+			<div className="flex">
 				<div
-					className="h-full text-xs font-medium p-2 pb-4 m-2 text-gray-500 rounded-lg md:rounded-lg bg-gray-200 md:rounded-b-none -mb-2 whitespace-nowrap"
-					style={{ fontSize: 10 }}
+					className="h-full text-xs font-medium p-2 text-gray-500 rounded-lg bg-gray-200 whitespace-nowrap"
+					style={{ fontSize: 10, margin: 10 }}
 				>
 					Updated{" "}
 					{330 - Math.abs(getTimeDiff(state.createdAt)) < 1
@@ -113,18 +110,21 @@ export default function Route({ devid, id, color, lowBg }) {
 				</div>
 				<div
 					className="rounded-lg flex justify-center items-center p-1 mb-2 md:mb-4 cursor-pointer shadow-lg"
-					style={{ background: "#f0f0f3" }}
+					style={{ background: lowBg }}
 					onClick={toggleDrawer("bottom", true)}
 				>
-					<div className="h-full p-2 md:p-4 -mt-2 -ml-2 rounded-l-lg font-bold w-24 text-xs whitespace-nowrap bg-white">
+					<div
+						className="h-full p-4  -ml-2 rounded-l-lg font-bold w-40 text-base whitespace-nowrap"
+						style={{ background: color }}
+					>
+						<LocationOnIcon style={{ color: "#fff" }} />{" "}
 						{id === 2 ? "Coffee House" : `Route ${id}`}
 					</div>
-					<div className="h-full p-1 md:p-3 -mt-2 flex justify-center items-center rounded-r-lg bg-white">
-						<DirectionsBusIcon
-							color="#fff"
-							className="text-white text-xs"
-							style={{ color }}
-						/>
+					<div
+						className="h-full p-4   flex justify-center items-center rounded-r-lg"
+						style={{ background: color }}
+					>
+						<DirectionsBusIcon color="#fff" className="text-white text-xs" />
 						<ExpandMoreIcon style={{ color: lowBg }} />
 					</div>
 				</div>

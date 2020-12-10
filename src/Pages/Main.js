@@ -3,6 +3,8 @@ import React from "react";
 import { Routes } from "../util";
 import Route from "../components/Route";
 import Logo from "../assets/logo.jpg";
+import NKDA from "../assets/nkda.png";
+
 import { useSelector } from "react-redux";
 import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
 
@@ -53,49 +55,67 @@ export default function Main() {
 		lng: routes.length > 0 ? routes[0].longitude : 88.461685,
 	};
 	return (
-		<div className="w-full h-screen fixed">
-			<div className="p-1 shadow-2xl absolute top-3 left-3 bg-white z-10">
-				<img src={Logo} className="w-40 h-14" alt="Logo" />
+		<>
+			<div
+				className="flex justify-between items-center w-full shadow-sm"
+				style={{ height: "15%" }}
+			>
+				<div className="bg-white z-10 w-1/4 p-1">
+					<img src={Logo} className="w-40 h-10 md:h-14" alt="Logo" />
+				</div>
+				<div className="p-1 bg-white z-10 text-base lg:text-xl font-semibold  w-2/4 text-center">
+					Newtown Bus Information
+				</div>
+				<div className="bg-white z-10 w-1/4 flex justify-end items-center p-1">
+					<img src={NKDA} className="w-20 md:w-24 h-14" alt="Logo" />
+				</div>
 			</div>
-			<div className="w-full h-5/6">
-				<GoogleMapReact
-					bootstrapURLKeys={{ key: "AIzaSyBJ-RKwTIsTWX_4eKsBN0bBUBBx8dP1-Ls" }}
-					defaultCenter={center}
-					defaultZoom={14}
-				>
-					<CustomComponent lat={22.595943} lng={88.486535}>
-						<img
-							src="https://www.flaticon.com/svg/static/icons/svg/818/818268.svg"
-							className="w-10 h-10"
-							alt="coffee house"
-						/>
-						<p
-							className="rounded-full font-bold whitespace-nowrap p-2 py-1 absolute bg-green-700 text-gray-200 text-xs"
-							style={{ fontSize: 7, marginLeft: -15 }}
-						>
-							Coffee House
-						</p>
-					</CustomComponent>
-					<CustomComponent lat={22.5825665} lng={88.4619895}>
-						<div
-							className="rounded-full font-medium absolute p-2 mt-8 bg-blue-600 text-white text-xs z-0 text-center"
-							style={{ fontSize: 10, width: 80 }}
-						>
-							NewTown Bus Depot
-						</div>
-					</CustomComponent>
-					{routes.length > 0
-						? routes.map((data, index) => (
-								<AnyReactComponent
-									lat={data.latitude}
-									lng={data.longitude}
-									text={data}
-								/>
-						  ))
-						: null}
-				</GoogleMapReact>
+			<div className="w-full fixed rounded-lg p-6" style={{ height: "60%" }}>
+				<div className="w-full h-full rounded-xl overflow-hidden">
+					<GoogleMapReact
+						bootstrapURLKeys={{
+							key: "AIzaSyBJ-RKwTIsTWX_4eKsBN0bBUBBx8dP1-Ls",
+						}}
+						defaultCenter={center}
+						defaultZoom={14}
+					>
+						<CustomComponent lat={22.595943} lng={88.486535}>
+							<img
+								src="https://www.flaticon.com/svg/static/icons/svg/818/818268.svg"
+								className="w-10 h-10"
+								alt="coffee house"
+							/>
+							<p
+								className="rounded-full font-bold whitespace-nowrap p-2 py-1 absolute bg-green-700 text-gray-200 text-xs"
+								style={{ fontSize: 7, marginLeft: -15 }}
+							>
+								Coffee House
+							</p>
+						</CustomComponent>
+						<CustomComponent lat={22.5825665} lng={88.4619895}>
+							<div
+								className="rounded-full font-medium absolute p-2 mt-8 bg-blue-600 text-white text-xs z-0 text-center"
+								style={{ fontSize: 10, width: 80 }}
+							>
+								NewTown Bus Depot
+							</div>
+						</CustomComponent>
+						{routes.length > 0
+							? routes.map((data, index) => (
+									<AnyReactComponent
+										lat={data.latitude}
+										lng={data.longitude}
+										text={data}
+									/>
+							  ))
+							: null}
+					</GoogleMapReact>
+				</div>
 			</div>
-			<div className="p-4 absolute bottom-6 md:bottom-0 h-1/6 w-full flex justify-around items-center overflow-x-scroll md:overflow-hidden overflow-y-hidden">
+			<div
+				className="p-4 absolute bottom-6 md:bottom-14 right-2"
+				style={{ height: "25%" }}
+			>
 				{Routes.map(data => (
 					<Route
 						devid={data.devid}
@@ -105,11 +125,7 @@ export default function Main() {
 						lowBg={data.lowBg}
 					/>
 				))}
-				{/* <img
-					src="https://img.freepik.com/free-vector/bus-taxi-cyclist-driving-city-road-transport-bicycle-car-flat-vector-illustration-traffic-urban-lifestyle_74855-8261.jpg?size=626&ext=jpg"
-					className="w-full h-full"
-				/> */}
 			</div>
-		</div>
+		</>
 	);
 }
