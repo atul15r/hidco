@@ -42,12 +42,25 @@
 	position: fixed;
 }
 
-div .MuiBackdrop-root {
+/* div .MuiBackdrop-root {
 	background-color: rgb(237 234 234 / 50%);
+} */
+.ant-table table {
+	font-size: 12px;
+	font-weight: 600;
 }
 .ant-table-pagination.ant-pagination {
 	display: none;
 }
 .ant-table-wrapper {
 	text-transform: capitalize;
+}
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td,
+.ant-table tfoot > tr > th,
+.ant-table tfoot > tr > td {
+	position: relative;
+	padding: 8px 8px;
+	overflow-wrap: break-word;
+	border: 1px solid #f7f7f7;
 }

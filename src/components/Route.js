@@ -90,7 +90,7 @@ export default function Route({ devid, id, color, lowBg }) {
 				} md:pl-0`}
 			>
 				<div
-					className="h-full text-xs font-medium p-2 pb-4 m-2 text-gray-500 md:text-gray-200 rounded-lg md:rounded-lg bg-gray-200 md:bg-blue-700 md:rounded-b-none -mb-2 whitespace-nowrap"
+					className="h-full text-xs font-medium p-2 pb-4 m-2 text-gray-500 rounded-lg md:rounded-lg bg-gray-200 md:rounded-b-none -mb-2 whitespace-nowrap"
 					style={{ fontSize: 10 }}
 				>
 					Updated{" "}

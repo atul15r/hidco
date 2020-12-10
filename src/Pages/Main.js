@@ -57,7 +57,7 @@ export default function Main() {
 			<div className="p-1 shadow-2xl absolute top-3 left-3 bg-white z-10">
 				<img src={Logo} className="w-40 h-14" />
 			</div>
-			<div className="w-full h-5/6 md:h-screen">
+			<div className="w-full h-5/6">
 				<GoogleMapReact
 					bootstrapURLKeys={{ key: "AIzaSyBJ-RKwTIsTWX_4eKsBN0bBUBBx8dP1-Ls" }}
 					defaultCenter={center}
@@ -75,7 +75,10 @@ export default function Main() {
 							Coffee House
 						</p>
 					</CustomComponent>
-					<CustomComponent lat={22.5825665} lng={88.4619895}>
+					<CustomComponent
+						lat={routes[0].latitude ? routes[0].latitude : 22.5825665}
+						lng={routes[0].longitude ? routes[0].longitude : 88.4619895}
+					>
 						<div
 							className="rounded-full font-medium absolute p-2 mt-8 bg-blue-600 text-white text-xs z-0 text-center"
 							style={{ fontSize: 10, width: 80 }}
@@ -94,7 +97,7 @@ export default function Main() {
 						: null}
 				</GoogleMapReact>
 			</div>
-			<div className="p-4 absolute bottom-0 md:bottom-2 md:right-2 h-1/6 md:h-auto w-full md:w-auto flex md:block justify-center items-center overflow-x-scroll overflow-y-hidden">
+			<div className="p-4 absolute bottom-6 md:bottom-0 h-1/6 w-full flex justify-around items-center overflow-x-scroll md:overflow-hidden overflow-y-hidden">
 				{Routes.map(data => (
 					<Route
 						devid={data.devid}
@@ -104,6 +107,10 @@ export default function Main() {
 						lowBg={data.lowBg}
 					/>
 				))}
+				{/* <img
+					src="https://img.freepik.com/free-vector/bus-taxi-cyclist-driving-city-road-transport-bicycle-car-flat-vector-illustration-traffic-urban-lifestyle_74855-8261.jpg?size=626&ext=jpg"
+					className="w-full h-full"
+				/> */}
 			</div>
 		</div>
 	);
