@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Routes } from "../util";
 import Route from "../components/Route";
 import Logo from "../assets/logo.jpg";
@@ -49,13 +49,13 @@ export default function Main() {
 	const { routes } = useSelector(state => state.data);
 
 	const center = {
-		lat: 22.581848,
-		lng: 88.461685,
+		lat: routes.length > 0 ? routes[0].latitude : 22.581848,
+		lng: routes.length > 0 ? routes[0].longitude : 88.461685,
 	};
 	return (
 		<div className="w-full h-screen fixed">
 			<div className="p-1 shadow-2xl absolute top-3 left-3 bg-white z-10">
-				<img src={Logo} className="w-40 h-14" />
+				<img src={Logo} className="w-40 h-14" alt="Logo" />
 			</div>
 			<div className="w-full h-5/6">
 				<GoogleMapReact
@@ -67,6 +67,7 @@ export default function Main() {
 						<img
 							src="https://www.flaticon.com/svg/static/icons/svg/818/818268.svg"
 							className="w-10 h-10"
+							alt="coffee house"
 						/>
 						<p
 							className="rounded-full font-bold whitespace-nowrap p-2 py-1 absolute bg-green-700 text-gray-200 text-xs"
@@ -75,16 +76,7 @@ export default function Main() {
 							Coffee House
 						</p>
 					</CustomComponent>
-					<CustomComponent
-						lat={
-							routes[0].latitude !== undefined ? routes[0].latitude : 22.5825665
-						}
-						lng={
-							routes[0].longitude !== undefined
-								? routes[0].longitude
-								: 88.4619895
-						}
-					>
+					<CustomComponent lat={22.5825665} lng={88.4619895}>
 						<div
 							className="rounded-full font-medium absolute p-2 mt-8 bg-blue-600 text-white text-xs z-0 text-center"
 							style={{ fontSize: 10, width: 80 }}
