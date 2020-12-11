@@ -1,24 +1,24 @@
 import axios from "axios";
 
 export const Routes = [
-	{
-		id: 1,
-		devid: "4d872a60f3f17a6a02a27fa72d303a34",
-		color: "#26a69a",
-		lowBg: "#b2dfdb",
-	},
+	// {
+	// 	id: 1,
+	// 	devid: "4d872a60f3f17a6a02a27fa72d303a34",
+	// 	color: "#26a69a",
+	// 	lowBg: "#b2dfdb",
+	// },
 	{
 		id: 2,
 		devid: "182767c696a8c4886d5f83574c95c8da",
 		color: "#ef5350",
 		lowBg: "#ef9a9a",
 	},
-	{
-		id: 3,
-		devid: "ab397cb9714119f4da80978a6bbb4025",
-		color: "#3f51b5",
-		lowBg: "#9fa8da",
-	},
+	// {
+	// 	id: 3,
+	// 	devid: "ab397cb9714119f4da80978a6bbb4025",
+	// 	color: "#3f51b5",
+	// 	lowBg: "#9fa8da",
+	// },
 ];
 
 export const Routes1Column = [
