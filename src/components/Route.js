@@ -118,7 +118,7 @@ export default function Route({ devid, id, color, lowBg }) {
 						style={{ background: color }}
 					>
 						<LocationOnIcon style={{ color: "#fff" }} />{" "}
-						{id === 2 ? "Coffee House" : `Route ${id}`}
+						{id === 1 ? "Shapoorji" : id == 2 ? "Coffee House" : `Route ${id}`}
 					</div>
 					<div
 						className="h-full p-4   flex justify-center items-center rounded-r-lg"
@@ -137,9 +137,9 @@ export default function Route({ devid, id, color, lowBg }) {
 					onClose={toggleDrawer("bottom", false)}
 					onOpen={toggleDrawer("bottom", true)}
 				>
-					{id === 4 ? (
+					{id === 2 ? (
 						<Table dataSource={Routes4Table} columns={Routes4Column} />
-					) : id === 2 ? (
+					) : id === 3 ? (
 						<Table dataSource={Routes2Table} columns={Routes2Column} />
 					) : (
 						<Table dataSource={Routes1Table} columns={Routes1Column} />
