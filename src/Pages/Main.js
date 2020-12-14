@@ -54,6 +54,7 @@ export default function Main() {
 		lat: routes.length > 0 ? routes[0].latitude : 22.581848,
 		lng: routes.length > 0 ? routes[0].longitude : 88.461685,
 	};
+
 	return (
 		<>
 			<div
@@ -76,6 +77,7 @@ export default function Main() {
 						bootstrapURLKeys={{
 							key: "AIzaSyBJ-RKwTIsTWX_4eKsBN0bBUBBx8dP1-Ls",
 						}}
+						center={center}
 						defaultCenter={center}
 						defaultZoom={14}
 					>
