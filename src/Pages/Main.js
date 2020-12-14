@@ -92,14 +92,14 @@ export default function Main() {
 								Coffee House
 							</p>
 						</CustomComponent>
-						<CustomComponent lat={22.5825665} lng={88.4619895}>
+						{/* <CustomComponent lat={22.5825665} lng={88.4619895}>
 							<div
 								className="rounded-full font-medium absolute p-2 mt-8 bg-blue-600 text-white text-xs z-0 text-center"
 								style={{ fontSize: 10, width: 80 }}
 							>
 								NewTown Bus Depot
 							</div>
-						</CustomComponent>
+						</CustomComponent> */}
 						{routes.length > 0
 							? routes.map((data, index) => (
 									<AnyReactComponent

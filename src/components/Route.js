@@ -129,7 +129,7 @@ export default function Route({ devid, id, color, lowBg }) {
 					</div>
 				</div>
 			</div>
-
+{/* 
 			<React.Fragment key={"bottom"}>
 				<SwipeableDrawer
 					anchor={"bottom"}
@@ -145,7 +145,7 @@ export default function Route({ devid, id, color, lowBg }) {
 						<Table dataSource={Routes1Table} columns={Routes1Column} />
 					)}
 				</SwipeableDrawer>
-			</React.Fragment>
+			</React.Fragment> */}
 		</>
 	);
 }
