@@ -20,8 +20,12 @@ const checkDevid = devid => {
 			);
 		case "182767c696a8c4886d5f83574c95c8da":
 			return (
-				<DirectionsBusIcon
-					style={{ color: "#ef5350", width: 30, height: 30 }}
+				// <DirectionsBusIcon
+				// 	style={{ color: "#ef5350", width: 30, height: 30 }}
+				// />
+				<img
+					src="https://www.flaticon.com/svg/static/icons/svg/1808/1808617.svg"
+					style={{ color: "#ef5350", width: 40, height: 40 }}
 				/>
 			);
 		case "ab397cb9714119f4da80978a6bbb4025":
@@ -71,7 +75,7 @@ export default function Main() {
 					<img src={NKDA} className="w-20 md:w-24 h-14" alt="Logo" />
 				</div>
 			</div>
-			<div className="w-full fixed rounded-lg p-6" style={{ height: "60%" }}>
+			<div className="w-full fixed rounded-lg p-6" style={{ height: "78%" }}>
 				<div className="w-full h-full rounded-xl overflow-hidden">
 					<GoogleMapReact
 						bootstrapURLKeys={{
@@ -115,8 +119,8 @@ export default function Main() {
 				</div>
 			</div>
 			<div
-				className="p-4 absolute bottom-6 md:bottom-14 right-2"
-				style={{ height: "25%" }}
+				className="p-4 absolute bottom-10 md:bottom-14 right-2"
+				style={{ height: "7%" }}
 			>
 				{Routes.map(data => (
 					<Route
